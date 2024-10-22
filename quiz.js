@@ -1,4 +1,4 @@
-let quizes = [
+let quiz = [
     {
         imagePath: "",
         questionText: "A small ball is thrown with an initial velocity of 50 m/s making an angle of 37 degree with horizontal line. Assume the gravitational acceleration is 10 m/s^2 downward.\nHow far would it lands from its initial position?",

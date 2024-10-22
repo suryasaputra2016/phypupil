@@ -45,6 +45,62 @@
 
       <div class="container">
         <h1>Take a Quiz</h1>
+
+        <!-- form to start quiz -->
+        <form class="start-quiz">
+            <label for="number-of-question">Number of Question:</label>
+            <input type="range" max="3" min="1" id="number-of-question" placeholder="3">
+            <button>Start Quiz</button>
+        </form>
+
+        <!-- question prompt -->
+        <div class="question-prompt">
+            <img src="" alt="" height="200px" width="400px">
+            <p>This is the question prompt</p>
+            <div class="option-buttons">
+                <button id="option-1">Option 1</button>
+                <button id="option-2">Option 2</button>
+                <button id="option-3">Option 3</button>
+                <button id="option-4">Option 4</button>
+            </div>
+        </div>
+        <div class="quiz-nav-buttons">
+            <button class="cancel-quiz">Previous Question</button>
+            <button class="cancel-quiz">Next Question</button>
+            <button class="cancel-quiz">Cancel Quiz</button>
+        </div>
+
+        <div class="quiz-result">
+            <div class="result-panel">
+                <table>
+                    <tr>
+                        <th>No</th>
+                        <th>Correct/Wrong</th>
+                        <th>Your Answer</th>
+                        <th>Right Answer</th>
+                    </tr>
+                    <tr>
+                        <th>1</th>
+                        <th>Correct</th>
+                        <th>A</th>
+                        <th>B</th>
+                    </tr>
+                    <tr>
+                        <th>2</th>
+                        <th>Wrong</th>
+                        <th>C</th>
+                        <th>D</th>
+                    </tr>
+                    <tr>
+                        <th>3</th>
+                        <th>Correct</th>
+                        <th>D</th>
+                        <th>B</th>
+                    </tr>
+                </table>
+            </div>
+            <button class="take-again">Take Again</button>
+        </div>
       </div>
 
       <footer class="text-center"><small>&copy; Surya Saputra</small></footer>
