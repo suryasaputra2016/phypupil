@@ -62,31 +62,31 @@
                 <!-- question prompt -->
                 <div class="card" id="question-prompt-card">
                     <div class="card-body">
-                        <h2 class="card-title">Question 1</h2>
+                        <h2 class="card-title" id="question-title">Question 1</h2>
 
-                        <img src="" alt="" height="200px" width="400px" class="card-img">
+                        <img src="" alt="" height="200px" width="400px" class="card-img" id="question-image">
 
-                        <p class="card-text">Which of the following is true?</p>
+                        <p class="card-text" id="question-body">Which of the following is true?</p>
                         <ul class="list-group">
-                            <li class="list-group-item" aria-current="true">Option 1</li>
-                            <li class="list-group-item active">Option 2</li>
-                            <li class="list-group-item">Option 3</li>
-                            <li class="list-group-item">Option 4</li>
+                            <li id="option-1" class="list-group-item">Option 1</li>
+                            <li id="option-2" class="list-group-item active" aria-current="true">Option 2</li>
+                            <li id="option-3" class="list-group-item">Option 3</li>
+                            <li id="option-4" class="list-group-item">Option 4</li>
                           </ul>
 
                         <br>
 
                         <div class="d-grid">
                             <div class="btn-group quiz-nav-buttons">
-                                <button class="btn btn-outline-primary">Previous</button>
-                                <button class="btn btn-outline-primary">Next</button>
+                                <button class="btn btn-outline-primary" id="previous-question-button">Previous</button>
+                                <button class="btn btn-outline-primary" id="next-question-button">Next</button>
                             </div>
                         </div>
 
                         <br>
 
                         <div class="d-grid">
-                            <button class="btn btn-outline-danger">Finish</button>
+                            <button class="btn btn-outline-danger" id="finish-button">Finish</button>
                         </div>
                     </div>
                 </div>
@@ -122,7 +122,7 @@
                             </tr>
                         </table>
                         <div class="d-grid">
-                            <button class="btn btn-primary take-again">Take Quiz Again</button>
+                            <button class="btn btn-primary take-again" id="take-quiz-again-button">Take Quiz Again</button>
                         </div>
                     </div>
                 </div>
