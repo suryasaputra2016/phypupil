@@ -45,67 +45,85 @@
 
       <div class="container">
         <h1>Take a Quiz</h1>
-
-        <!-- form to start quiz -->
-        <div class="card">
-            <form class="card-body start-quiz">
-                <label for="number-of-question" class="form-label">Number of Question: 3</label>
-                <input type="range" max="4" min="1" id="number-of-question" placeholder="3" class="form-range">
-                <button class="btn btn-primary">Start Quiz</button>
-            </form>
-        </div>
-
-        <!-- question prompt -->
-        <div class=" card question-prompt">
-            <h2 class="card-title">Question 1</h2>
-
-            <img src="" alt="" height="200px" width="400px" class="card-img">
-
-            <div class="card-body">
-                <p class="card-text">This is the question prompt</p>
-                <div class="btn-group-lg option-buttons">
-                    <button type = "button" id="option-1" class="btn btn-outline-primary">Option 1</button>
-                    <button id="option-2" class="btn btn-outline-primary active">Option 2</button>
-                    <button id="option-3" class="btn btn-outline-primary">Option 3</button>
-                    <button id="option-4" class="btn btn-outline-primary">Option 4</button>
+        <div class="row justify-content-center">
+            <div class="col col-lg-6 col-md-8">
+                <!-- form to start quiz -->
+                <div class="card">
+                    <form class="card-body start-quiz">
+                        <label for="number-of-question" class="form-label">Number of Question: 3</label>
+                        <input type="range" max="4" min="1" id="number-of-question" placeholder="3" class="form-range">
+                        <div class="d-grid">
+                            <button class="btn btn-primary">Start Quiz</button>
+                        </div>
+                    </form>
                 </div>
-                <div class="btn-group-lg quiz-nav-buttons">
-                    <button class="btn btn-outline-primary">Previous Question</button>
-                    <button class="btn btn-outline-primary">Next Question</button>
-                    <button class="btn btn-outline-danger">Cancel Quiz</button>
-                </div>
-            </div>
-        </div>
+                <!-- question prompt -->
+                <div class=" card question-prompt">
+                    <div class="card-body">
+                        <h2 class="card-title">Question 1</h2>
 
-        <div class="card quiz-result">
-            <div class="card-body">
-                <table class="table table-striped">
-                    <tr>
-                        <th>No</th>
-                        <th>Correct/Wrong</th>
-                        <th>Your Answer</th>
-                        <th>Right Answer</th>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Correct</td>
-                        <td>A</td>
-                        <td>B</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Wrong</td>
-                        <td>C</td>
-                        <td>D</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Correct</td>
-                        <td>D</td>
-                        <td>B</td>
-                    </tr>
-                </table>
-                <button class="btn btn-outline-primary take-again">Take Again</button>
+                        <img src="" alt="" height="200px" width="400px" class="card-img">
+
+                        <p class="card-text">Which of the following is true?</p>
+                        <ul class="list-group">
+                            <li class="list-group-item" aria-current="true">Option 1</li>
+                            <li class="list-group-item active">Option 2</li>
+                            <li class="list-group-item">Option 3</li>
+                            <li class="list-group-item">Option 4</li>
+                          </ul>
+
+                        <br>
+
+                        <div class="d-grid">
+                            <div class="btn-group quiz-nav-buttons">
+                                <button class="btn btn-outline-primary">Previous</button>
+                                <button class="btn btn-outline-primary">Next</button>
+                            </div>
+                        </div>
+
+                        <br>
+
+                        <div class="d-grid">
+                            <button class="btn btn-outline-danger">Finish</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quiz result -->
+                <div class="card quiz-result">
+                    <div class="card-body">
+                        <h2>Your score is 80/100</h2>
+                        <table class="table table-striped text-center">
+                            <tr>
+                                <th>No.</th>
+                                <th>Correct/Wrong</th>
+                                <th>Your Answer</th>
+                                <th>Right Answer</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Correct</td>
+                                <td>A</td>
+                                <td>B</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Wrong</td>
+                                <td>C</td>
+                                <td>D</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Correct</td>
+                                <td>D</td>
+                                <td>B</td>
+                            </tr>
+                        </table>
+                        <div class="d-grid">
+                            <button class="btn btn-primary take-again">Take Quiz Again</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
       </div>
