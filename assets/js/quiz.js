@@ -1,4 +1,19 @@
-// Quiz
+// number of questions
+let numberOfQuestion = 3;
+
+// show label
+document.getElementById('number-of-questions-label').textContent = "Number of questions: " + numberOfQuestion;
+
+// bind number of questions slider to numberOfQuestion
+document.getElementById('number-of-questions').addEventListener('change', updateNumberOfQuestion)
+
+// update numberOfQuestion
+function updateNumberOfQuestion() {
+    numberOfQuestion = Number(document.getElementById('number-of-questions').value);
+    document.getElementById('number-of-questions-label').textContent = "Number of questions: " + numberOfQuestion;
+}
+
+// Questions
 let questions = [
     {
         title: "Question 1",
@@ -93,7 +108,6 @@ function goToPreviousQuestion() {
 
 function goToNextQuestion() {
     let questionID = document.getElementById('question-id').value;
-    console.log(questionID);
     showQuestion(Number(questionID) + 1);
 }
 
@@ -117,7 +131,11 @@ function showQuestion(number) {
     }
 
     // disable next button for the last question
-    // *** belum ***
+    if(number==numberOfQuestion-1) {
+        document.getElementById('next-question-button').disabled = true;
+    } else {
+        document.getElementById('next-question-button').disabled = false;
+    }
 }
 
 // finish quiz
