@@ -1,5 +1,5 @@
 // Quiz
-let quiz = [
+let questions = [
     {
         title: "Question 1",
         imagePath: "",
@@ -65,7 +65,10 @@ document.getElementById('finish-button').addEventListener('click', finishQuiz);
 document.getElementById('take-quiz-again-button').addEventListener('click', restartQuiz);
 
 // add event listener to previous question button
-document.getElementById('previous-question-button').addEventListener('click', goToPrevious);
+document.getElementById('previous-question-button').addEventListener('click', goToPreviousQuestion);
+
+// add event listener to next question button
+document.getElementById('next-question-button').addEventListener('click', goToNextQuestion);
 
 
 
@@ -80,24 +83,41 @@ function startQuiz(event) {
     document.getElementById('question-prompt-card').style.display = 'block';
 
     // show first question
-    showQuestion(quiz[0])
+    showQuestion(0)
 }
 
-function goToPrevious() {
-    showQuestion(quiz[0])
+function goToPreviousQuestion() {
+    let questionID = document.getElementById('question-id').value;
+    showQuestion(Number(questionID) - 1);
+}
+
+function goToNextQuestion() {
+    let questionID = document.getElementById('question-id').value;
+    console.log(questionID);
+    showQuestion(Number(questionID) + 1);
 }
 
 // show question
-function showQuestion(question) {
+function showQuestion(number) {
+    document.getElementById('question-id').value = number;
+    document.getElementById('question-title').textContent = questions[number].title;
+    document.getElementById('question-image').src = questions[number].imagePath;
+    document.getElementById('question-body').textContent = questions[number].questionText;
 
-    document.getElementById('question-title').textContent = question.title;
-    document.getElementById('question-image').src = question.imagePath;
-    document.getElementById('question-body').textContent = question.questionText;
+    document.getElementById('option-1').textContent = questions[number].optionList[0];
+    document.getElementById('option-2').textContent = questions[number].optionList[1];
+    document.getElementById('option-3').textContent = questions[number].optionList[2];
+    document.getElementById('option-4').textContent = questions[number].optionList[3];
 
-    document.getElementById('option-1').textContent = question.optionList[0];
-    document.getElementById('option-2').textContent = question.optionList[1];
-    document.getElementById('option-3').textContent = question.optionList[2];
-    document.getElementById('option-4').textContent = question.optionList[3];
+    // disable previous button for the first question
+    if(number==0) {
+        document.getElementById('previous-question-button').disabled = true;
+    } else {
+        document.getElementById('previous-question-button').disabled = false;
+    }
+
+    // disable next button for the last question
+    // *** belum ***
 }
 
 // finish quiz
@@ -109,7 +129,7 @@ function finishQuiz(event) {
     document.getElementById('quiz-result-card').style.display = 'block';
 }
 
-// resstart quiz
+// restart quiz
 function restartQuiz() {
     // hide quiz result
     document.getElementById('quiz-result-card').style.display = 'none';
