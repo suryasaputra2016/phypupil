@@ -159,10 +159,10 @@ function restartQuiz() {
             <th>Right Answer</th>
         </tr>`;
 
-        // reset answer choice
-        for(question in questions) {
-            question.answerChoice = undefined;
-        }
+    // reset answer choice
+    for(question of questions) {
+        question.answerChoice = undefined;
+    }
 
     // show start quiz form
     document.getElementById('start-quiz-card').style.display = 'block';
@@ -205,6 +205,14 @@ function chooseOption(event) {
 
 // show quiz result
 function showQuizResult() {
+    // calculate and show point
+    let point = 0;
+    for(question of questions) {
+        point += (question.answerChoice === question.answerKey) ? 1 : 0;
+    }
+    point = Math.round(point / numberOfQuestion * 100);
+    document.getElementById('point-announcement').textContent = `Your point is ${point}/100`;
+
     let resultTable = document.getElementById('result-table');
 
     for(let i = 0; i < numberOfQuestion; i++) {
