@@ -47,32 +47,39 @@
         <h1>Take a Quiz</h1>
 
         <!-- form to start quiz -->
-        <form class="start-quiz">
-            <label for="number-of-question">Number of Question:</label>
-            <input type="range" max="3" min="1" id="number-of-question" placeholder="3">
-            <button>Start Quiz</button>
-        </form>
+        <div class="card">
+            <form class="card-body start-quiz">
+                <label for="number-of-question" class="form-label">Number of Question: 3</label>
+                <input type="range" max="4" min="1" id="number-of-question" placeholder="3" class="form-range">
+                <button class="btn btn-primary">Start Quiz</button>
+            </form>
+        </div>
 
         <!-- question prompt -->
-        <div class="question-prompt">
-            <img src="" alt="" height="200px" width="400px">
-            <p>This is the question prompt</p>
-            <div class="option-buttons">
-                <button id="option-1">Option 1</button>
-                <button id="option-2">Option 2</button>
-                <button id="option-3">Option 3</button>
-                <button id="option-4">Option 4</button>
+        <div class=" card question-prompt">
+            <h2 class="card-title">Question 1</h2>
+
+            <img src="" alt="" height="200px" width="400px" class="card-img">
+
+            <div class="card-body">
+                <p class="card-text">This is the question prompt</p>
+                <div class="btn-group-lg option-buttons">
+                    <button type = "button" id="option-1" class="btn btn-outline-primary">Option 1</button>
+                    <button id="option-2" class="btn btn-outline-primary active">Option 2</button>
+                    <button id="option-3" class="btn btn-outline-primary">Option 3</button>
+                    <button id="option-4" class="btn btn-outline-primary">Option 4</button>
+                </div>
+                <div class="btn-group-lg quiz-nav-buttons">
+                    <button class="btn btn-outline-primary">Previous Question</button>
+                    <button class="btn btn-outline-primary">Next Question</button>
+                    <button class="btn btn-outline-danger">Cancel Quiz</button>
+                </div>
             </div>
         </div>
-        <div class="quiz-nav-buttons">
-            <button class="cancel-quiz">Previous Question</button>
-            <button class="cancel-quiz">Next Question</button>
-            <button class="cancel-quiz">Cancel Quiz</button>
-        </div>
 
-        <div class="quiz-result">
-            <div class="result-panel">
-                <table>
+        <div class="card quiz-result">
+            <div class="card-body">
+                <table class="table table-striped">
                     <tr>
                         <th>No</th>
                         <th>Correct/Wrong</th>
@@ -80,26 +87,26 @@
                         <th>Right Answer</th>
                     </tr>
                     <tr>
-                        <th>1</th>
-                        <th>Correct</th>
-                        <th>A</th>
-                        <th>B</th>
+                        <td>1</td>
+                        <td>Correct</td>
+                        <td>A</td>
+                        <td>B</td>
                     </tr>
                     <tr>
-                        <th>2</th>
-                        <th>Wrong</th>
-                        <th>C</th>
-                        <th>D</th>
+                        <td>2</td>
+                        <td>Wrong</td>
+                        <td>C</td>
+                        <td>D</td>
                     </tr>
                     <tr>
-                        <th>3</th>
-                        <th>Correct</th>
-                        <th>D</th>
-                        <th>B</th>
+                        <td>3</td>
+                        <td>Correct</td>
+                        <td>D</td>
+                        <td>B</td>
                     </tr>
                 </table>
+                <button class="btn btn-outline-primary take-again">Take Again</button>
             </div>
-            <button class="take-again">Take Again</button>
         </div>
       </div>
 
