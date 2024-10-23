@@ -182,7 +182,11 @@ function goToNextQuestion() {
 
 // choose option
 function chooseOption(event) {
-    // show chosen option
+    let questionID = Number(document.getElementById('question-id').value);
+
+    // if option hasn't been choosen
+    if(questions[questionID].answerChoice !== event.target.value) {
+        // show chosen option
     let parent = event.target.parentElement;
     for(option of parent.children) {
         option.classList.remove('active')
@@ -191,8 +195,12 @@ function chooseOption(event) {
 
     // save answer choice on questions
     let value =  event.target.value;
-    let questionID = Number(document.getElementById('question-id').value);
     questions[questionID].answerChoice = Number(value);
+    } else { // if option has been choosen
+        event.target.classList.remove('active');
+        questions[questionID].answerChoice = undefined;
+    }
+    
 }
 
 // show quiz result
