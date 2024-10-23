@@ -1,3 +1,4 @@
+// Quiz
 let quiz = [
     {
         imagePath: "",
@@ -35,5 +36,26 @@ let quiz = [
         answerKey: 0,
         answerChoice: 5,
     },
+    {
+        imagePath: "",
+        questionText: "Two spherical charges are initially held apart. They repel each other with the force of 108 Newton.\nWhat would be the forces between them if their distance is increased to 3 times its initial value?",
+        optionList: [
+            "12 N",
+            "36 N",
+            "324 N",
+            "972 N",
+        ],
+        answerKey: 0,
+        answerChoice: 5,
+    },
 
 ];
+
+let startButton = document.getElementById('start-quiz-button');
+startButton.addEventListener('click', startQuiz);
+
+
+function startQuiz() {
+    // hide start quiz form
+    // show question form
+}

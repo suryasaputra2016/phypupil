@@ -1,0 +1,11 @@
+#start-quiz-card {
+    display: block;
+}
+
+#question-prompt-card {
+    display: none;
+}
+
+#quiz-result-card {
+    display: none;
+}
