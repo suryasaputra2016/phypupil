@@ -101,16 +101,6 @@ function startQuiz(event) {
     showQuestion(0)
 }
 
-function goToPreviousQuestion() {
-    let questionID = document.getElementById('question-id').value;
-    showQuestion(Number(questionID) - 1);
-}
-
-function goToNextQuestion() {
-    let questionID = document.getElementById('question-id').value;
-    showQuestion(Number(questionID) + 1);
-}
-
 // show question
 function showQuestion(number) {
     document.getElementById('question-id').value = number;
@@ -122,6 +112,11 @@ function showQuestion(number) {
     document.getElementById('option-2').textContent = questions[number].optionList[1];
     document.getElementById('option-3').textContent = questions[number].optionList[2];
     document.getElementById('option-4').textContent = questions[number].optionList[3];
+
+    document.getElementById('option-1').addEventListener('click', chooseOption);
+    document.getElementById('option-2').addEventListener('click', chooseOption);
+    document.getElementById('option-3').addEventListener('click', chooseOption);
+    document.getElementById('option-4').addEventListener('click', chooseOption);
 
     // disable previous button for the first question
     if(number==0) {
@@ -145,6 +140,7 @@ function finishQuiz(event) {
     
     // show quiz result
     document.getElementById('quiz-result-card').style.display = 'block';
+    showQuizResult();
 }
 
 // restart quiz
@@ -154,4 +150,35 @@ function restartQuiz() {
 
     // show start quiz form
     document.getElementById('start-quiz-card').style.display = 'block';
+}
+
+// go to previous question
+function goToPreviousQuestion() {
+    let questionID = document.getElementById('question-id').value;
+    showQuestion(Number(questionID) - 1);
+}
+
+// go to next question
+function goToNextQuestion() {
+    let questionID = document.getElementById('question-id').value;
+    showQuestion(Number(questionID) + 1);
+}
+
+// choose option
+function chooseOption(event) {
+    // show chosen option
+    let parent = event.target.parentElement;
+    for(option of parent.children) {
+        option.classList.remove('active')
+    }
+    event.target.classList.add('active');
+
+    let value =  event.target.value;
+    let questionID = Number(document.getElementById('question-id').value);
+    questions[questionID].answerChoice = Number(value);
+}
+
+// show quiz result
+function showQuizResult() {
+    
 }
