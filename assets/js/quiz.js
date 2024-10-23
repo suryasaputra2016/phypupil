@@ -26,7 +26,7 @@ let questions = [
             "480 meters",
         ],
         answerKey: 2,
-        answerChoice: 5,
+        answerChoice: undefined,
     },
     {
         title: "Question 2",
@@ -39,7 +39,7 @@ let questions = [
             "8 m/s^2",
         ],
         answerKey: 0,
-        answerChoice: 5,
+        answerChoice: undefined,
     },
     {
         title: "Question 3",
@@ -52,7 +52,7 @@ let questions = [
             "972 N",
         ],
         answerKey: 0,
-        answerChoice: 5,
+        answerChoice: undefined,
     },
     {
         title: "Question 4",
@@ -65,7 +65,7 @@ let questions = [
             "972 N",
         ],
         answerKey: 0,
-        answerChoice: 5,
+        answerChoice: undefined,
     },
 
 ];
@@ -108,15 +108,16 @@ function showQuestion(number) {
     document.getElementById('question-image').src = questions[number].imagePath;
     document.getElementById('question-body').textContent = questions[number].questionText;
 
-    document.getElementById('option-1').textContent = questions[number].optionList[0];
-    document.getElementById('option-2').textContent = questions[number].optionList[1];
-    document.getElementById('option-3').textContent = questions[number].optionList[2];
-    document.getElementById('option-4').textContent = questions[number].optionList[3];
-
-    document.getElementById('option-1').addEventListener('click', chooseOption);
-    document.getElementById('option-2').addEventListener('click', chooseOption);
-    document.getElementById('option-3').addEventListener('click', chooseOption);
-    document.getElementById('option-4').addEventListener('click', chooseOption);
+    // add content and event listeners for all options
+    let options = document.getElementById('options-container').children;
+    for(let i = 0; i < options.length; i++) {
+        options[i].textContent = questions[number].optionList[i];
+        options[i].addEventListener('click', chooseOption);
+        options[i].classList.remove('active');
+    }
+    if(questions[number].answerChoice !== undefined) {
+        options[questions[number].answerChoice].classList.add('active');
+    }
 
     // disable previous button for the first question
     if(number==0) {
@@ -148,6 +149,21 @@ function restartQuiz() {
     // hide quiz result
     document.getElementById('quiz-result-card').style.display = 'none';
 
+    // reset result table
+    let resultTable = document.getElementById('result-table');
+    resultTable.innerHTML = 
+        `<tr>
+            <th>No.</th>
+            <th>Correct/Wrong</th>
+            <th>Your Answer</th>
+            <th>Right Answer</th>
+        </tr>`;
+
+        // reset answer choice
+        for(question in questions) {
+            question.answerChoice = undefined;
+        }
+
     // show start quiz form
     document.getElementById('start-quiz-card').style.display = 'block';
 }
@@ -173,6 +189,7 @@ function chooseOption(event) {
     }
     event.target.classList.add('active');
 
+    // save answer choice on questions
     let value =  event.target.value;
     let questionID = Number(document.getElementById('question-id').value);
     questions[questionID].answerChoice = Number(value);
@@ -180,5 +197,31 @@ function chooseOption(event) {
 
 // show quiz result
 function showQuizResult() {
-    
+    let resultTable = document.getElementById('result-table');
+
+    for(let i = 0; i < numberOfQuestion; i++) {
+        let rowTable = document.createElement('tr');
+
+        let cellOne = document.createElement('td');
+        cellOne.textContent = i + 1;
+        rowTable.appendChild(cellOne);
+
+        let cellTwo = document.createElement('td');
+        cellTwo.textContent = (questions[i].answerChoice === questions[i].answerKey ) ? "Correct" : "Wrong";
+        rowTable.appendChild(cellTwo);
+
+        let cellThree = document.createElement('td');
+        if(questions[i].answerChoice !== undefined) {
+            cellThree.textContent = questions[i].optionList[questions[i].answerChoice];
+        } else {
+            cellThree.textContent = "-";
+        }
+        rowTable.appendChild(cellThree);
+
+        let cellFour = document.createElement('td');
+        cellFour.textContent = questions[i].optionList[questions[i].answerKey];
+        rowTable.appendChild(cellFour);
+
+        resultTable.appendChild(rowTable);
+    }
 }

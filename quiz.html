@@ -68,11 +68,11 @@
                         <img src="" alt="" height="200px" width="400px" class="card-img" id="question-image">
 
                         <p class="card-text" id="question-body">Which of the following is true?</p>
-                        <ul class="list-group">
-                            <li id="option-1" class="list-group-item" value="0">Option 1</li>
-                            <li id="option-2" class="list-group-item" value="1">Option 2</li>
-                            <li id="option-3" class="list-group-item" value="2">Option 3</li>
-                            <li id="option-4" class="list-group-item" value="3">Option 4</li>
+                        <ul class="list-group" id="options-container">
+                            <li class="list-group-item" value="0">Option 1</li>
+                            <li class="list-group-item" value="1">Option 2</li>
+                            <li class="list-group-item" value="2">Option 3</li>
+                            <li class="list-group-item" value="3">Option 4</li>
                           </ul>
 
                         <br>
@@ -96,31 +96,14 @@
                 <div class="card quiz-result" id="quiz-result-card">
                     <div class="card-body">
                         <h2>Your score is 80/100</h2>
-                        <table class="table table-striped text-center" id="result-table">
+                        <table class="table text-center" id="result-table">
                             <tr>
                                 <th>No.</th>
                                 <th>Correct/Wrong</th>
                                 <th>Your Answer</th>
                                 <th>Right Answer</th>
                             </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Correct</td>
-                                <td>A</td>
-                                <td>B</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Wrong</td>
-                                <td>C</td>
-                                <td>D</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Correct</td>
-                                <td>D</td>
-                                <td>B</td>
-                            </tr>
+                            
                         </table>
                         <div class="d-grid">
                             <button class="btn btn-primary take-again" id="take-quiz-again-button">Take Quiz Again</button>
