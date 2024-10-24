@@ -9,7 +9,7 @@
 }
 
 .card-body:hover {
-    transform: translate(0, -5em);
+    transform: translate(0, -6em);
     transition-duration: 0.5s;
 }
 
