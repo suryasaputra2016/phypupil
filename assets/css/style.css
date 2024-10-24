@@ -38,3 +38,11 @@ a, input, h1, h2, h3, .large-symbol {
   navbar-toggler:focus{
     box-shadow: none !important;
   }
+
+  .nav-link.active {
+    border-bottom: 2px solid white !important;
+  }
+
+  .large-symbol {
+    font-size: 8em !important;
+}
