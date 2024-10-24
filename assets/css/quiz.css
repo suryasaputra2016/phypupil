@@ -9,3 +9,11 @@
 #quiz-result-card {
     display: none;
 }
+
+#wrong {
+    color: red !important;
+}
+
+#empty {
+    color: orange !important;
+}

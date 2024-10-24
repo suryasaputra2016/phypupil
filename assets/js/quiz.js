@@ -1,5 +1,5 @@
 // number of questions
-let numberOfQuestion = 3;
+let numberOfQuestion = 5;
 
 // show label
 document.getElementById('number-of-questions-label').textContent = "Number of questions: " + numberOfQuestion;
@@ -57,6 +57,32 @@ let questions = [
     {
         title: "Question 4",
         imagePath: "",
+        questionText: "A small ball is thrown with an initial velocity of 50 m/s making an angle of 37 degree with horizontal line. Assume the gravitational acceleration is 10 m/s^2 downward.\nHow far would it lands from its initial position?",
+        optionList: [
+            "120 meters",
+            "180 meters",
+            "240 meters",
+            "480 meters",
+        ],
+        answerKey: 2,
+        answerChoice: undefined,
+    },
+    {
+        title: "Question 5",
+        imagePath: "",
+        questionText: "A small block of mass 2 kg is pushed with two oposing forces of 5 Newton to the right and 3 Newton to the left along a smooth horizontal plane.\nWhat is the block's acceleration?",
+        optionList: [
+            "1 m/s^2",
+            "2 m/s^2",
+            "4 m/s^2",
+            "8 m/s^2",
+        ],
+        answerKey: 0,
+        answerChoice: undefined,
+    },
+    {
+        title: "Question 6",
+        imagePath: "",
         questionText: "Two spherical charges are initially held apart. They repel each other with the force of 108 Newton.\nWhat would be the forces between them if their distance is increased to 3 times its initial value?",
         optionList: [
             "12 N",
@@ -67,7 +93,58 @@ let questions = [
         answerKey: 0,
         answerChoice: undefined,
     },
-
+    {
+        title: "Question 7",
+        imagePath: "",
+        questionText: "A small ball is thrown with an initial velocity of 50 m/s making an angle of 37 degree with horizontal line. Assume the gravitational acceleration is 10 m/s^2 downward.\nHow far would it lands from its initial position?",
+        optionList: [
+            "120 meters",
+            "180 meters",
+            "240 meters",
+            "480 meters",
+        ],
+        answerKey: 2,
+        answerChoice: undefined,
+    },
+    {
+        title: "Question 8",
+        imagePath: "",
+        questionText: "A small block of mass 2 kg is pushed with two oposing forces of 5 Newton to the right and 3 Newton to the left along a smooth horizontal plane.\nWhat is the block's acceleration?",
+        optionList: [
+            "1 m/s^2",
+            "2 m/s^2",
+            "4 m/s^2",
+            "8 m/s^2",
+        ],
+        answerKey: 0,
+        answerChoice: undefined,
+    },
+    {
+        title: "Question 9",
+        imagePath: "",
+        questionText: "Two spherical charges are initially held apart. They repel each other with the force of 108 Newton.\nWhat would be the forces between them if their distance is increased to 3 times its initial value?",
+        optionList: [
+            "12 N",
+            "36 N",
+            "324 N",
+            "972 N",
+        ],
+        answerKey: 0,
+        answerChoice: undefined,
+    },
+    {
+        title: "Question 10",
+        imagePath: "",
+        questionText: "A small ball is thrown with an initial velocity of 50 m/s making an angle of 37 degree with horizontal line. Assume the gravitational acceleration is 10 m/s^2 downward.\nHow far would it lands from its initial position?",
+        optionList: [
+            "120 meters",
+            "180 meters",
+            "240 meters",
+            "480 meters",
+        ],
+        answerKey: 2,
+        answerChoice: undefined,
+    },
 ];
 
 // add event listener to start button
@@ -223,7 +300,15 @@ function showQuizResult() {
         rowTable.appendChild(cellOne);
 
         let cellTwo = document.createElement('td');
-        cellTwo.textContent = (questions[i].answerChoice === questions[i].answerKey ) ? "Correct" : "Wrong";
+        if(questions[i].answerChoice === questions[i].answerKey) {
+            cellTwo.textContent = "Correct"
+        } else if(questions[i].answerChoice === undefined) {
+            cellTwo.textContent = "Empty";
+            cellTwo.setAttribute("id", 'empty');
+        }  else {
+            cellTwo.textContent = "Wrong";
+            cellTwo.setAttribute("id", 'wrong');
+        }
         rowTable.appendChild(cellTwo);
 
         let cellThree = document.createElement('td');
