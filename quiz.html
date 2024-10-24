@@ -52,64 +52,69 @@
             <div class="col col-lg-6 col-md-8">
                 <!-- form to start quiz -->
                 <div class="card" id="start-quiz-card">
-                    <form class="card-body">
-                        <label for="number-of-questions" class="form-label" id="number-of-questions-label">Number of Question: 3</label>
-                        <input type="range" max="4" min="1" id="number-of-questions" placeholder="3" class="form-range">
-                        <div class="d-grid">
-                            <button class="btn btn-primary" id="start-quiz-button">Start Quiz</button>
-                        </div>
-                    </form>
+                  <div class="card-header"><h2>New Quiz</h2></div>
+                  <form class="card-body">
+                      <label for="number-of-questions" class="form-label" id="number-of-questions-label">Number of Question: 3</label>
+                      <input type="range" max="4" min="1" id="number-of-questions" placeholder="3" class="form-range">
+                      <div class="d-grid">
+                          <button class="btn btn-primary" id="start-quiz-button">Start Quiz</button>
+                      </div>
+                  </form>
                 </div>
                 <!-- question prompt -->
                 <div class="card" id="question-prompt-card">
-                    <div class="card-body">
-                        <input type="hidden" id="question-id">
-                        <h2 class="card-title" id="question-title">Question 1</h2>
+                  <div class="card-header">
+                    <h2 class="card-title" id="question-title"></h2>
+                  </div>
+                  <div class="card-body">
+                      <input type="hidden" id="question-id">
+                      <img src="" alt="" height="200px" width="400px" class="card-img" id="question-image">
 
-                        <img src="" alt="" height="200px" width="400px" class="card-img" id="question-image">
+                      <p class="card-text" id="question-body"></p>
+                      <ul class="list-group" id="options-container">
+                          <li class="list-group-item" value="0"></li>
+                          <li class="list-group-item" value="1"></li>
+                          <li class="list-group-item" value="2"></li>
+                          <li class="list-group-item" value="3"></li>
+                        </ul>
 
-                        <p class="card-text" id="question-body">Which of the following is true?</p>
-                        <ul class="list-group" id="options-container">
-                            <li class="list-group-item" value="0">Option 1</li>
-                            <li class="list-group-item" value="1">Option 2</li>
-                            <li class="list-group-item" value="2">Option 3</li>
-                            <li class="list-group-item" value="3">Option 4</li>
-                          </ul>
+                      <br>
 
-                        <br>
+                      <div class="d-grid">
+                          <div class="btn-group quiz-nav-buttons">
+                              <button class="btn btn-outline-primary" id="previous-question-button">Previous</button>
+                              <button class="btn btn-outline-primary" id="next-question-button">Next</button>
+                          </div>
+                      </div>
 
-                        <div class="d-grid">
-                            <div class="btn-group quiz-nav-buttons">
-                                <button class="btn btn-outline-primary" id="previous-question-button">Previous</button>
-                                <button class="btn btn-outline-primary" id="next-question-button">Next</button>
-                            </div>
-                        </div>
+                      <br>
 
-                        <br>
-
-                        <div class="d-grid">
-                            <button class="btn btn-outline-danger" id="finish-button">Finish</button>
-                        </div>
-                    </div>
+                      <div class="d-grid">
+                          <button class="btn btn-outline-danger" id="finish-button">Finish</button>
+                      </div>
+                  </div>
                 </div>
 
                 <!-- Quiz result -->
                 <div class="card quiz-result" id="quiz-result-card">
-                    <div class="card-body">
-                        <h2 id="point-announcement"></h2>
-                        <table class="table text-center" id="result-table">
-                            <tr>
-                                <th>No.</th>
-                                <th>Correct/Wrong</th>
-                                <th>Your Answer</th>
-                                <th>Right Answer</th>
-                            </tr>
-                            
-                        </table>
-                        <div class="d-grid">
-                            <button class="btn btn-primary take-again" id="take-quiz-again-button">Take Quiz Again</button>
-                        </div>
-                    </div>
+                  <div class="card-header">
+                    <h2>Result</h2>
+                  </div>
+                  <div class="card-body">
+                      <h3 id="point-announcement"></h3>
+                      <table class="table text-center" id="result-table">
+                          <tr>
+                              <th>No.</th>
+                              <th>Correct/Wrong</th>
+                              <th>Your Answer</th>
+                              <th>Right Answer</th>
+                          </tr>
+                          
+                      </table>
+                      <div class="d-grid">
+                          <button class="btn btn-primary take-again" id="take-quiz-again-button">Take Quiz Again</button>
+                      </div>
+                  </div>
                 </div>
             </div>
         </div>
