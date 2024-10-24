@@ -47,30 +47,38 @@
       <div class="container">
         <div class="row justify-content-center">
           <div class="col col-lg-6 col-md-8">
-            <form action="">
-              <h2>Let's Go!</h2>
-              <div>
-                <label for="username" class="form-label">Username:</label>
-                <input type="text" id="username" class="form-control" required>
+            <div class="card">
+              <div class="card-header">
+                <h2>Let's Go!</h2>
               </div>
-              <div>
-                <label for="email" class="form-label">Email:</label>
-                <input type="email" id="email" class="form-control" required>
+              <div class="card-body">
+                <form action="">
+                  <div>
+                    <label for="username" class="form-label">Username:</label>
+                    <input type="text" id="username" class="form-control" required>
+                  </div>
+                  <div>
+                    <label for="email" class="form-label">Email:</label>
+                    <input type="email" id="email" class="form-control" required>
+                  </div>
+                  <div>
+                    <label for="password" class="form-label">Password:</label>
+                    <input type="password" id="password" class="form-control" required minlength="8">
+                  </div>
+                  <div>
+                    <label for="password-confirmation" class="form-label">Confirm Password:</label>
+                    <input type="password" id="password-confirmation" class="form-control" required>
+                  </div>
+                  <br>
+                  <div class="d-grid">
+                    <button class="btn btn-primary">Sign up</button>
+                  </div>
+                </form>
               </div>
-              <div>
-                <label for="password" class="form-label">Password:</label>
-                <input type="password" id="password" class="form-control" required minlength="8">
+              <div class="card-footer">
+                <p>Already have account? <a href="./login.html">Sign in</a></p>
               </div>
-              <div>
-                <label for="password-confirmation" class="form-label">Confirm Password:</label>
-                <input type="password" id="password-confirmation" class="form-control" required>
-              </div>
-              <br>
-              <div class="d-grid">
-                <button class="btn btn-primary">Sign up</button>
-              </div>
-            </form>
-            <p>Already have account? <a href="./login.html">Sign in</a></p>
+            </div>
           </div>
         </div>
       </div>
