@@ -7,3 +7,22 @@
 #footer {
     margin-top: auto;
 }
+
+.navbar-brand, .nav-link {
+    color: white !important;
+}
+
+.navbar, #footer, .btn, .question-choice.active {
+    background-color: rgb(12, 56, 51) !important;
+    border-color: rgb(12, 56, 51) !important;
+    color: white !important;
+}
+
+a, input, h2, h3 {
+    color: rgb(12, 56, 51) !important;
+}
+
+.card {
+    border-color: rgb(12, 56, 51) !important;
+    border-width: 1px !important;
+}

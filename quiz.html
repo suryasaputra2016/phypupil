@@ -12,7 +12,7 @@
     <script src="assets/js/quiz.js" defer></script>
 </head>
 <body id="body">
-    <nav class="navbar navbar-expand-lg bg-body-tertiary mb-5">
+    <nav class="navbar navbar-expand-lg mb-5  text-bg-primary">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">PhyPupil</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -47,7 +47,6 @@
       </nav>
 
       <div class="container">
-        <h1>Take a Quiz</h1>
         <div class="row justify-content-center">
             <div class="col col-lg-6 col-md-8">
                 <!-- form to start quiz -->
@@ -72,10 +71,10 @@
 
                       <p class="card-text" id="question-body"></p>
                       <ul class="list-group" id="options-container">
-                          <li class="list-group-item" value="0"></li>
-                          <li class="list-group-item" value="1"></li>
-                          <li class="list-group-item" value="2"></li>
-                          <li class="list-group-item" value="3"></li>
+                          <li class="list-group-item question-choice" value="0"></li>
+                          <li class="list-group-item question-choice" value="1"></li>
+                          <li class="list-group-item question-choice" value="2"></li>
+                          <li class="list-group-item question-choice" value="3"></li>
                         </ul>
 
                       <br>
@@ -120,6 +119,10 @@
         </div>
       </div>
 
-      <footer id="footer" class="text-center"><small>&copy; Surya Saputra</small></footer>
+      <footer id="footer" class="text-center">
+        <div class="my-3">
+            <small>&copy; Surya Saputra</small>
+        </div>
+      </footer>
 </body>
 </html>
