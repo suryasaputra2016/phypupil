@@ -1,0 +1,11 @@
+
+#body {
+    background-image: url("../images/home.jpg") !important;
+    /* https://unsplash.com/photos/a-close-up-of-a-piece-of-paper-with-writing-on-it-dvMJR9-Drbs */
+}
+
+.big-title {
+    font-size: 5em !important;
+    font-weight:900;
+    /* color: rgb(169, 0, 0) !important; */
+}
